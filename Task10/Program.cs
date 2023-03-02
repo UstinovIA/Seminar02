@@ -6,17 +6,18 @@
 
 Console.WriteLine("Введите трехзначное число");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number < 0) number = -number;
-if (number > 99 && number < 1000)
-{
-    Console.WriteLine($"Вторая цифра числа -> {SecondDigit(number)}");
-}
-else
-{
-    Console.WriteLine("Введено не трехзначное число");
-}
+string output = SecondDigit(number) > 0 ? $"Вторая цифра числа {number} -> {SecondDigit(number)}" : "Введено не трехзначное число";
+Console.WriteLine(output);
 
 int SecondDigit(int num)
 {
-    return (num % 100) / 10;
+    if (num < 0) num = -num;
+    if (num >= 100 && num < 1000)
+    {
+        return (num % 100) / 10;
+    }
+    else
+    {
+        return -1;
+    }
 }
