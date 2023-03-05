@@ -6,7 +6,7 @@
 
 Console.WriteLine("Введите трехзначное число");
 int number = Convert.ToInt32(Console.ReadLine());
-string output = SecondDigit(number) > 0 ? $"Вторая цифра числа {number} -> {SecondDigit(number)}" : "Введено не трехзначное число";
+string output = SecondDigit(number) >= 0 ? $"Вторая цифра числа {number} -> {SecondDigit(number)}" : "Введено не трехзначное число";
 Console.WriteLine(output);
 
 int SecondDigit(int num)
